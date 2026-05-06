@@ -7,7 +7,7 @@
 
 ## Overview
 
-Inconsistent employee records are a common data quality issue in hospital information systems — especially around name formatting, profession classification, and demographic fields. Messy HR data leads to reporting errors, duplicate records, and failed system integrations.
+Inconsistent employee records are a common data quality issue in hospital information systems, especially around name formatting, profession classification, and demographic fields. Messy HR data leads to reporting errors, duplicate records, and failed system integrations.
 
 This project demonstrates a **structured SQL-based data cleaning pipeline** for hospital workforce data, from raw ingestion to a clean, standardized output table.
 
@@ -89,7 +89,7 @@ sql-hospital-workforce-data-cleaning/
 
 ## Notes
 
-- Dataset is simulated to reflect realistic hospital HR data issues — no real patient or employee data is used
+- Dataset is simulated to reflect realistic hospital HR data issues, no real patient or employee data is used
 - Schema uses foreign key constraints to enforce referential integrity between professions and profession groups
 - Raw table is kept intact throughout the process; all cleaning is applied to the `employees` table
 
