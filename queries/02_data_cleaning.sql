@@ -119,3 +119,17 @@ SET proper_name = TRIM(
     ELSE prefix_title || ' ' || clean_name 
   END
 )
+
+-- 8. UPDATE DATE OF BIRTH TO ISO FORMAT (YYYY-MM-DD)
+UPDATE employees
+SET date_of_birth =
+    SUBSTR(date_of_birth, 7, 4) || '-' ||
+    SUBSTR(date_of_birth, 4, 2) || '-' ||
+    SUBSTR(date_of_birth, 1, 2)
+
+-- 9. ADDING AGE COLUMN
+ALTER TABLE employees 
+ADD COLUMN age INTEGER
+
+UPDATE employees 
+SET age = CAST(strftime('%Y', 'now') AS DATE) - strftime ('%Y', date_of_birth) - (strftime('%m-%d', 'now') < (strftime('%m-%d', date_of_birth)))

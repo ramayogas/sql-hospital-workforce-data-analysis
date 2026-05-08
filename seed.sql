@@ -43,4 +43,4 @@ VALUES
 4. Type .import (csvname).csv (tablename)
 **/
 
-select * from employees
+SELECT * FROM employees

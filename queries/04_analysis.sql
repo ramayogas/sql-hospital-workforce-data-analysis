@@ -55,8 +55,19 @@ LIMIT 5
 
 -- AGES , pr ini substr dll, buat kategori umur, misal 20-30, 31-40, dst, kasi label misal gen z boomer dll,sama persentase
 select date_of_birth from employees --28/12/1974
-SELECT date(date_of_birth) from employees
-SELECT date('now') from employees --2026-05-07
-select (date('now') - date_of_birth) as age from employees
 
--- profesi per gender
+
+WITH employees_age AS(
+ SELECT 
+    age,
+   case 
+    when age between 18 and 24 then 'Gen Z'
+    when age between 25 and 40 then 'Millennials'
+    when age between 41 and 56 then 'Gen X'
+    when age between 57 and 75 then 'Baby Boomers'
+    else 'Silent Generation' end as [Generation]
+   from employees
+ )
+ select 
+    age, generation
+    from employees_age
