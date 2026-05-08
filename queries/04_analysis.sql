@@ -1,8 +1,4 @@
-PRAGMA table_info(employees);
-
-select * from employees
-
--- ANALYZING GENDER DISTRIBUTION
+-- 1. ANALYZING GENDER DISTRIBUTION
 SELECT
 	CAST(
         ROUND(
@@ -24,7 +20,7 @@ FROM
 	employees
 
 
--- ANALYZING PROFESSION DISTRIBUTION
+-- 2. ANALYZING PROFESSION DISTRIBUTION
 SELECT 
 	p.profession_name AS [Profession],
 	COUNT ( p.profession_id ) AS [Number of Employees],
@@ -37,7 +33,7 @@ GROUP BY
 	p.profession_id
 
 
--- 5 MOST COMMON PROFESSIONS
+-- 3. MOST COMMON PROFESSIONS
 SELECT 
 	p.profession_name AS [Profession],
 	COUNT ( p.profession_id ) AS [Number of Employees],
@@ -53,10 +49,15 @@ ORDER BY
 LIMIT 5
 
 
--- AGES , pr ini substr dll, buat kategori umur, misal 20-30, 31-40, dst, kasi label misal gen z boomer dll,sama persentase
-select date_of_birth from employees --28/12/1974
+-- 4. GENDER BREAKDOWN PER PROFESSION GROUP
+select 
+count(e.gender)/(count(p.profession_id)) *100.0 as test,
+count(e.gender),e.gender, p.profession_name from employees e
+inner join employee_professions p on e.profession_id = p.profession_id
+GROUP BY p.profession_name, e.gender
 
 
+-- 5.
 WITH employees_age AS(
  SELECT 
     age,
