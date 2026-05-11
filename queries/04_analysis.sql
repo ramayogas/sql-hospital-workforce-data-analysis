@@ -50,12 +50,23 @@ LIMIT 5
 
 
 -- 4. GENDER BREAKDOWN PER PROFESSION GROUP
-select 
-count(e.gender)/(count(p.profession_id)) *100.0 as test,
-count(e.gender),e.gender, p.profession_name from employees e
-inner join employee_professions p on e.profession_id = p.profession_id
-GROUP BY p.profession_name, e.gender
-
+SELECT
+	p.profession_name AS [Profession],
+	e.gender AS [Gender],
+	COUNT (e.gender) AS [Number of Employees],
+	ROUND(
+		CAST(COUNT(e.gender) AS FLOAT) / SUM (COUNT(e.gender)) OVER () * 100.0,
+		2 
+	) || '%' AS [Percentage]
+FROM
+	employees e
+	INNER JOIN employee_professions p ON e.profession_id = p.profession_id 
+GROUP BY
+	p.profession_name,
+	e.gender
+ORDER BY
+    COUNT (e.gender) DESC,
+    p.profession_name
 
 -- 5.
 WITH employees_age AS(
