@@ -8,6 +8,7 @@ SELECT
     p.profession_name AS [Profession], 
     pg.profession_group_name AS [Profession Group], 
     e.date_of_birth AS [Date of Birth], 
+    e.age AS [Age],
     e.hire_date AS [Hire Date], 
     e.resignation_date AS [Resignation Date]
 FROM 

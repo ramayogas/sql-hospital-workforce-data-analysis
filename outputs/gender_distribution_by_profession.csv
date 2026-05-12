@@ -1,0 +1,51 @@
+profession,gender,number_of_employees,percentage_of_total_employees
+Nurse,F,273,18.42%
+Nurse,M,80,5.4%
+Doctor,M,75,5.06%
+Administration,M,61,4.12%
+Midwife,F,57,3.85%
+Administration,F,54,3.64%
+Security,M,52,3.51%
+Cleaning Service,F,48,3.24%
+Doctor,F,46,3.1%
+Specialist Doctor,M,45,3.04%
+Specialist Doctor,F,43,2.9%
+Cleaning Service,M,39,2.63%
+Management,M,38,2.56%
+Management,F,37,2.5%
+Medical Support,F,32,2.16%
+Medical Support,M,28,1.89%
+Medical Records,F,26,1.75%
+Pharmacist,F,26,1.75%
+Medical Records,M,24,1.62%
+Finance,F,20,1.35%
+Laboratory Analyst,M,19,1.28%
+Laundry Staff,F,19,1.28%
+IT Team,M,18,1.21%
+Nutritionist,F,18,1.21%
+Building Technician,M,17,1.15%
+CSSD,F,17,1.15%
+CSSD,M,17,1.15%
+Finance,M,17,1.15%
+IT Team,F,17,1.15%
+Ambulance Driver,M,16,1.08%
+Pharmacist,M,16,1.08%
+Radiographer,M,16,1.08%
+Casemix / BPJS Claim,M,15,1.01%
+Casemix / BPJS Claim,F,14,0.94%
+Laboratory Analyst,F,14,0.94%
+Physiotherapist,F,13,0.88%
+Radiographer,F,13,0.88%
+Blood Bank Officer,F,11,0.74%
+Laundry Staff,M,11,0.74%
+Physiotherapist,M,11,0.74%
+Electromedical Technician,M,10,0.67%
+Midwife,M,10,0.67%
+Electromedical Technician,F,9,0.61%
+K3 / Occupational Health & Safety,M,8,0.54%
+Security,F,8,0.54%
+Blood Bank Officer,M,6,0.4%
+Building Technician,F,6,0.4%
+K3 / Occupational Health & Safety,F,6,0.4%
+Ambulance Driver,F,4,0.27%
+Nutritionist,M,2,0.13%
