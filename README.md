@@ -7,13 +7,13 @@
 A structured SQL pipeline for cleaning and analyzing simulated hospital employee data.
 Built to address real-world HR data quality issues and extract workforce insights.
 
-> Dataset is simulated to reflect realistic hospital HR data issues — no real patient or employee data is used.
+> Dataset is simulated to reflect realistic hospital HR data issues (no real patient or employee data is used).
 
 ---
 
 ## Overview
 
-Hospital HR systems frequently suffer from inconsistent records — malformed names, misclassified professions, and unvalidated demographic fields. This project demonstrates a full SQL-based pipeline from raw ingestion to clean data and actionable workforce analytics.
+Hospital HR systems frequently suffer from inconsistent records, malformed names, misclassified professions, and unvalidated demographic fields. This project demonstrates a full SQL-based pipeline from raw ingestion to clean data and actionable workforce analytics.
 
 **Dataset:** 1,482 simulated hospital employees (anonymized)  
 **Tool:** SQLite  
@@ -55,7 +55,7 @@ outputs/              → CSV results
 
 - **56.07%** of employees are female; **43.93%** male
 - **Nurses** are the largest profession group, making up **23%** of total workforce
-- **44.2%** of employee names had malformed formatting before cleaning — all resolved post-pipeline
+- **44.2%** of employee names had malformed formatting before cleaning, all resolved post-pipeline
 - The workforce is dominated by **Millennials (25–40)** and **Gen X (41–56)**
 - **Specialist Doctors** and **Doctors** combined account for **13%** of total staff
 - Female nurses alone represent **18.42%** of the entire workforce
@@ -107,7 +107,7 @@ employee_professions       → lookup: profession_id → profession_name
 employee_profession_groups → lookup: profession_group_id → group_name
 ```
 
-Raw and clean tables are kept separate intentionally — preserving original data while building a validated version alongside it.
+Raw and clean tables are kept separate intentionally, preserving original data while building a validated version alongside it.
 
 ---
 
