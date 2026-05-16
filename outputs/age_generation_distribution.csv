@@ -1,41 +1,5 @@
-age,generation
-22,Gen Z
-23,Gen Z
-24,Gen Z
-25,Millennials
-26,Millennials
-27,Millennials
-28,Millennials
-29,Millennials
-30,Millennials
-31,Millennials
-32,Millennials
-33,Millennials
-34,Millennials
-35,Millennials
-36,Millennials
-37,Millennials
-38,Millennials
-39,Millennials
-40,Millennials
-41,Gen X
-42,Gen X
-43,Gen X
-44,Gen X
-45,Gen X
-46,Gen X
-47,Gen X
-48,Gen X
-49,Gen X
-50,Gen X
-51,Gen X
-52,Gen X
-53,Gen X
-54,Gen X
-55,Gen X
-56,Gen X
-57,Baby Boomers
-58,Baby Boomers
-59,Baby Boomers
-60,Baby Boomers
-61,Baby Boomers
+generation,number_of_employees,percentage_of_total_employees
+Baby Boomers,161,10.86%
+Gen X,588,39.68%
+Gen Z,105,7.09%
+Millennials,628,42.38%
