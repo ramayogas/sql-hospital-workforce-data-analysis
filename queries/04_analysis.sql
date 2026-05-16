@@ -13,7 +13,7 @@ FROM
 SELECT 
 	p.profession_name AS [profession],
 	COUNT ( p.profession_id ) AS [number_of_employees],
-    ROUND(COUNT(p.profession_id) * 100 / (SELECT COUNT(*) FROM employees),2) || '%' AS [percentage_of_total_employees]
+    ROUND(COUNT(p.profession_id) * 100.0 / (SELECT COUNT(*) FROM employees),2) || '%' AS [percentage_of_total_employees]
   
 FROM
 	employees e
@@ -71,16 +71,20 @@ WITH employees_age AS(
    FROM employees
  )
  SELECT 
-    age, generation
+    generation,
+    COUNT(*) AS [number_of_employees],
+    ROUND(CAST(COUNT(*) AS FLOAT)/(SELECT COUNT(*) FROM employees) * 100.0, 2) || '%' AS [percentage_of_total_employees]
     FROM employees_age
-    GROUP BY age, generation
+    GROUP BY generation
 
 -- 6. NAME FORMAT STANDARDIZATION RATE
 SELECT 
     COUNT(r.employee_id) AS [count_before_standarization],
     COUNT(e.employee_id) AS [count_after_standardization],
     ROUND(COUNT(CASE WHEN r.full_name = e.proper_name THEN 'SAME' ELSE NULL END) * 100.0 / COUNT(r.employee_id) ,2) || '%' AS [valid_name_format],
-    ROUND(COUNT(CASE WHEN r.full_name <> e.proper_name THEN 'NEW' ELSE NULL END) * 100.0 / COUNT(r.employee_id) ,2) || '%' AS [malformed_name_format]
+    COUNT(CASE WHEN r.full_name = e.proper_name THEN 'SAME' ELSE NULL END) AS[valid_name_format_count],
+    ROUND(COUNT(CASE WHEN r.full_name <> e.proper_name THEN 'NEW' ELSE NULL END) * 100.0 / COUNT(r.employee_id) ,2) || '%' AS [malformed_name_format],
+    COUNT(CASE WHEN r.full_name <> e.proper_name THEN 'NEW' ELSE NULL END) AS [malformed_name_format_count]
 FROM employees_raw r
 INNER JOIN employees e ON r.employee_id = e.employee_id
 

@@ -1,0 +1,20 @@
+{
+    "dbcode.connections": [
+        {
+            "connectionId": "6hqnUfyQGLUOHiSMR0uUV",
+            "name": "hospital",
+            "driver": "sqlite",
+            "connectionType": "socket",
+            "socket": "sql-hospital-workforce-data-analysis/data/hospital.db",
+            "readOnly": false,
+            "postConnectionSqlType": "inline",
+            "driverOptions": {
+                "extensions": []
+            },
+            "idleTimeout": 0,
+            "introspection": {
+                "progressive": false
+            }
+        }
+    ]
+}
